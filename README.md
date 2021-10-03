@@ -9,11 +9,25 @@
     <p align="center">
 
 
-## Description
+## Descrição
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+<p>Objetivo do projeto, é a refatoração do CRUD WSL que foi feito a 2 anos em java e vraptor</p>
+<p>Na versão antiga do projeto o mesmo era uma única aplicação agora ela será dividida em uma api e o front end</p>
+<p>Também será adotado o uso do docker</p>
 
-## Installation
+Versão antiga do projeto -> https://github.com/DanielPin/CrudWVS
+  
+## Tecnologias
+<div style="display: inline_block"><br>  
+  <img align="center" alt="Nest" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg">
+  <img align="center" alt="Ts" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">  
+  <img align="center" alt="Ts" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg">
+  <img align="center" alt="Ts" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
+  
+  
+</div>
+
+## Instalação
 
 ```bash
 $ npm install
