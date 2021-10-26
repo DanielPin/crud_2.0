@@ -1,0 +1,58 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Cliente {
+  bairro: String!
+  celular: String!
+  cidade: String!
+  cpf: String!
+  dataDeCadastro: DateTime!
+  estado: String!
+  id: String!
+  nome: String!
+  rg: String!
+  rua: String!
+  sobrenome: String!
+  telefone: String!
+}
+
+input CreateClienteDto {
+  bairro: String!
+  celular: String!
+  cidade: String!
+  cpf: String!
+  estado: String!
+  nome: String!
+  rg: String!
+  rua: String!
+  sobrenome: String
+  telefone: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Mutation {
+  atualizarCliente(cpf: String!, data: UpdateClienteDto!): Cliente!
+  cadastroDeCliente(createcliente: CreateClienteDto!): Cliente!
+}
+
+type Query {
+  listarClientes: [Cliente!]!
+}
+
+input UpdateClienteDto {
+  bairro: String
+  celular: String
+  cidade: String
+  cpf: String
+  estado: String
+  nome: String
+  rg: String
+  rua: String
+  sobrenome: String
+  telefone: String
+}

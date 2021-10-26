@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { response } from 'express';
 import { Repository } from 'typeorm';
 import { CreateClienteDto } from './dto/create-cliente.dto';
+import { UpdateClienteDto } from './dto/update-cliente.dto';
 import { Cliente } from './entities/cliente.entity';
 
 @Injectable()
@@ -30,5 +31,21 @@ export class ClienteService {
     return this.clienteRepository.findOne({
       where: { cpf: cpf },
     });
+  }
+
+  async updateCliente(
+    cpf: string,
+    atualizarCliente: UpdateClienteDto,
+  ): Promise<Cliente> {
+    const cliente = await this.findByCpf(cpf);
+
+    await this.clienteRepository.save({ ...cliente, ...atualizarCliente });
+
+    const clienteAtualizado = this.clienteRepository.create({
+      ...cliente,
+      ...atualizarCliente,
+    });
+
+    return clienteAtualizado;
   }
 }

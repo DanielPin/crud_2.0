@@ -3,7 +3,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { AppService } from './app.service';
-import { ClienteModule } from './cliente/cliente.module';
+import { ClienteModule } from './modules/cliente/cliente.module';
 
 @Module({
   imports: [
