@@ -13,7 +13,7 @@ export class ClienteResolver {
   async listarClientes(): Promise<ClienteDTO[]> {
     return this.clienteService.findAll();
   }
-  
+
   @Query(() => ClienteDTO)
   async buscarClientePorCpf(@Args('cpf') cpf: string): Promise<ClienteDTO> {
     return this.clienteService.findByCpf(cpf);
