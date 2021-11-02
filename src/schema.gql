@@ -38,9 +38,11 @@ scalar DateTime
 type Mutation {
   atualizarCliente(cpf: String!, data: UpdateClienteDto!): Cliente!
   cadastroDeCliente(createcliente: CreateClienteDto!): Cliente!
+  deletarCliente(cpf: String!): Boolean!
 }
 
 type Query {
+  buscarClientePorCpf(cpf: String!): Cliente!
   listarClientes: [Cliente!]!
 }
 
