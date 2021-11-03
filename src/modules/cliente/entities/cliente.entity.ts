@@ -35,6 +35,6 @@ export class Cliente {
   @Column()
   estado: string;
 
-  @Column({ default: 'now()' })
+  @Column({ default: () => 'CURRENT_TIMESTAMP' })
   dataDeCadastro: Date;
 }

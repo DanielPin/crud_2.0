@@ -30,6 +30,14 @@ input CreateClienteDto {
   telefone: String!
 }
 
+input CreateUsuarioDto {
+  EMail: String!
+  Login: String!
+  Nome: String!
+  Role: Roles!
+  Senha: String!
+}
+
 """
 A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
 """
@@ -38,12 +46,18 @@ scalar DateTime
 type Mutation {
   atualizarCliente(cpf: String!, data: UpdateClienteDto!): Cliente!
   cadastroDeCliente(createcliente: CreateClienteDto!): Cliente!
+  createUsuario(createUser: CreateUsuarioDto!): Usuario!
   deletarCliente(cpf: String!): Boolean!
 }
 
 type Query {
   buscarClientePorCpf(cpf: String!): Cliente!
   listarClientes: [Cliente!]!
+}
+
+enum Roles {
+  ADMIN
+  USER
 }
 
 input UpdateClienteDto {
@@ -57,4 +71,14 @@ input UpdateClienteDto {
   rua: String
   sobrenome: String
   telefone: String
+}
+
+type Usuario {
+  EMail: String!
+  Login: String!
+  Nome: String!
+  Role: Roles!
+  Senha: String!
+  dataDeCadastro: DateTime!
+  id: String!
 }
