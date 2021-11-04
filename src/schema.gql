@@ -31,6 +31,7 @@ input CreateClienteDto {
 }
 
 input CreateUsuarioDto {
+  ConfirmarSenha: String!
   EMail: String!
   Login: String!
   Nome: String!
@@ -45,6 +46,7 @@ scalar DateTime
 
 type Mutation {
   atualizarCliente(cpf: String!, data: UpdateClienteDto!): Cliente!
+  atualizarUsuario(data: UpdateUsuarioDto!, login: String!): Usuario!
   cadastroDeCliente(createcliente: CreateClienteDto!): Cliente!
   createUsuario(createUser: CreateUsuarioDto!): Usuario!
   deletarCliente(cpf: String!): Boolean!
@@ -52,6 +54,8 @@ type Mutation {
 
 type Query {
   buscarClientePorCpf(cpf: String!): Cliente!
+  buscarUsuarioLogin(login: String!): Usuario!
+  getUsuarios: [Usuario!]!
   listarClientes: [Cliente!]!
 }
 
@@ -71,6 +75,14 @@ input UpdateClienteDto {
   rua: String
   sobrenome: String
   telefone: String
+}
+
+input UpdateUsuarioDto {
+  ConfirmarSenha: String
+  EMail: String
+  Nome: String
+  Role: Roles
+  Senha: String
 }
 
 type Usuario {

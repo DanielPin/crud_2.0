@@ -24,6 +24,11 @@ export class CreateUsuarioDto {
   @Field()
   Senha: string;
 
+  @IsString()
+  @IsNotEmpty({ message: 'Senha obrigatória' })
+  @Field()
+  ConfirmarSenha: string;
+
   @IsNotEmpty({ message: 'Role Obrigatória' })
   @Field(() => Roles)
   Role: Roles;
