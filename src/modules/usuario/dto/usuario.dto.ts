@@ -1,4 +1,4 @@
-import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Field, HideField, Int, ObjectType } from '@nestjs/graphql';
 import { Roles } from 'src/common/enums/roles';
 
 @ObjectType('Usuario')
@@ -15,7 +15,7 @@ export class UsuarioDto {
   @Field()
   Login: string;
 
-  @Field()
+  @HideField()
   Senha: string;
 
   @Field(() => Roles)

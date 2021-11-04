@@ -1,4 +1,5 @@
 import { Roles } from 'src/common/enums/roles';
+import { hashPassword } from 'src/common/transformers/crypto-transform';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -15,7 +16,9 @@ export class Usuario {
   @Column()
   Login: string;
 
-  @Column()
+  @Column({
+    transformer: hashPassword,
+  })
   Senha: string;
 
   @Column()

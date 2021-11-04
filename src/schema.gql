@@ -90,7 +90,6 @@ type Usuario {
   Login: String!
   Nome: String!
   Role: Roles!
-  Senha: String!
   dataDeCadastro: DateTime!
   id: String!
 }
