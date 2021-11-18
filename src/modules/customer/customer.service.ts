@@ -20,6 +20,7 @@ export class CustomerService {
 
   async create(createCustomer: CreateCustomerDto): Promise<Customer> {
     await this.checkCpf(createCustomer.cpf);
+    createCustomer.cpf = await this.replaceCpf(createCustomer.cpf);
 
     const validateCustomer = await this.customerRepository.findOne({
       where: { cpf: createCustomer.cpf },
@@ -45,6 +46,7 @@ export class CustomerService {
 
   async findByCpf(cpf: string): Promise<Customer> {
     await this.checkCpf(cpf);
+    cpf = await this.replaceCpf(cpf);
 
     const customer = await this.customerRepository.findOne({
       where: { cpf: cpf },
@@ -89,5 +91,10 @@ export class CustomerService {
     if (!validCpf) {
       throw new InternalServerErrorException('Cpf inválido!');
     }
+  }
+
+  async replaceCpf(cpf: string) {
+    const cpfRepalce = cpf.replace('.', '').replace('.', '').replace('-', '');
+    return cpfRepalce;
   }
 }

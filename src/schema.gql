@@ -48,6 +48,7 @@ type Mutation {
   createUser(createUser: CreateUserDto!): User!
   customerRegistration(createcliente: CreateCustomerDto!): Customer!
   deleteCustomer(cpf: String!): Boolean!
+  deleteUser(login: String!): Boolean!
   updateCustomer(cpf: String!, data: UpdateCustomerDto!): Customer!
   updateUser(data: UpdateUserDto!, login: String!): User!
 }
@@ -68,7 +69,6 @@ input UpdateCustomerDto {
   bairro: String
   celular: String
   cidade: String
-  cpf: String
   estado: String
   nome: String
   rg: String

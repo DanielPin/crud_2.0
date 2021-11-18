@@ -24,12 +24,6 @@ export class UpdateCustomerDto {
   rg?: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'CPF obrigatório' })
-  @IsOptional()
-  @Field({ nullable: true })
-  cpf?: string;
-
-  @IsString()
   @IsNotEmpty({ message: 'Telefone obrigatório' })
   @IsOptional()
   @Field({ nullable: true })
