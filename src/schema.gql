@@ -2,6 +2,16 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+input AuthInput {
+  login: String!
+  password: String!
+}
+
+type AuthType {
+  token: String!
+  user: User!
+}
+
 input CreateCustomerDto {
   bairro: String!
   celular: String!
@@ -49,6 +59,7 @@ type Mutation {
   customerRegistration(createcliente: CreateCustomerDto!): Customer!
   deleteCustomer(cpf: String!): Boolean!
   deleteUser(login: String!): Boolean!
+  login(data: AuthInput!): AuthType!
   updateCustomer(cpf: String!, data: UpdateCustomerDto!): Customer!
   updateUser(data: UpdateUserDto!, login: String!): User!
 }

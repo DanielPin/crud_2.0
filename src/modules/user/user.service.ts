@@ -1,4 +1,8 @@
-import { Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
+import {
+  Injectable,
+  InternalServerErrorException,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -82,8 +86,6 @@ export class UserService {
 
   async deleteUser(login: string) {
     const user = await this.searchUserLogin(login);
-    console.log('abacate');
-    console.log(user);
     const deletedUser = await this.userRepository.remove(user);
     if (!deletedUser) {
       throw new InternalServerErrorException('Problema ao deletar usuario');
