@@ -1,9 +1,9 @@
-import { Field, InputType, Int } from '@nestjs/graphql';
-import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
+import { Field, InputType } from '@nestjs/graphql';
+import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { Roles } from 'src/common/enums/roles';
 
 @InputType()
-export class UpdateUsuarioDto {
+export class UpdateUserDto {
   @IsString()
   @IsOptional()
   @IsNotEmpty({ message: 'Nome obrigatório' })

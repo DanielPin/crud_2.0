@@ -1,8 +1,8 @@
-import { Field, HideField, Int, ObjectType } from '@nestjs/graphql';
+import { Field, HideField, ObjectType } from '@nestjs/graphql';
 import { Roles } from 'src/common/enums/roles';
 
-@ObjectType('Usuario')
-export class UsuarioDto {
+@ObjectType('User')
+export class UserDto {
   @Field()
   id: string;
 

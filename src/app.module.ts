@@ -3,8 +3,8 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { AppService } from './app.service';
-import { ClienteModule } from './modules/cliente/cliente.module';
-import { UsuarioModule } from './modules/usuario/usuario.module';
+import { CustomerModule } from './modules/customer/customer.module';
+import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [
@@ -13,8 +13,8 @@ import { UsuarioModule } from './modules/usuario/usuario.module';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       sortSchema: true,
     }),
-    ClienteModule,
-    UsuarioModule,
+    CustomerModule,
+    UserModule,
   ],
   controllers: [],
   providers: [AppService],

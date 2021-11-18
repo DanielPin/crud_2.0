@@ -1,4 +1,4 @@
-export class ValidacaoCpf {
+export class CpfValidation {
   async execute(cpf: string) {
     let resto;
     let soma = 0;

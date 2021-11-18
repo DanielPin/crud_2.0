@@ -2,7 +2,7 @@ import { Field, InputType } from '@nestjs/graphql';
 import { IsNotEmpty, IsOptional, IsString, MaxLength } from 'class-validator';
 
 @InputType()
-export class UpdateClienteDto {
+export class UpdateCustomerDto {
   @IsString()
   @IsNotEmpty({ message: 'Nome obrigatório' })
   @MaxLength(30)
